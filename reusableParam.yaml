@@ -1,0 +1,6 @@
+name: reusableParam
+in: query
+description: filter something
+schema:
+  type: number
+  default: 30
