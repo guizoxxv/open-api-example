@@ -1,0 +1,25 @@
+openapi: 3.0.1
+info:
+  title: An include file to define common parameters
+  version: 1.0.0
+paths: 
+    /test:
+      get:
+        parameters:
+          - $ref: 'reusableParam.yaml'
+        responses:
+          200:
+            description: OK
+    /test-2:
+      get:
+        parameters:
+          - name: reusableParam
+            allOf:
+              - $ref: 'reusableParam.yaml'
+              - required: true
+              - schema:
+                type: number
+                default: 50
+        responses:
+          200:
+            description: OK            
