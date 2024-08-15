@@ -6,7 +6,7 @@ paths:
     /test:
       get:
         parameters:
-          - $ref: 'reusableParam.yaml'
+          - $ref: 'https://raw.githubusercontent.com/guizoxxv/open-api-example/main/reusableParam.yaml'
         responses:
           200:
             description: OK
@@ -15,7 +15,7 @@ paths:
         parameters:
           - name: reusableParam
             allOf:
-              - $ref: 'reusableParam.yaml'
+              - $ref: 'https://raw.githubusercontent.com/guizoxxv/open-api-example/main/reusableParam.yaml'
               - required: true
               - schema:
                 type: number
