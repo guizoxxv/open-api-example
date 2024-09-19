@@ -9,7 +9,7 @@ paths:
       get:
         description: Uses a parameter defined in another file.
         parameters:
-          - $ref: 'https://raw.githubusercontent.com/guizoxxv/open-api-example/main/reusableParam.yaml'
+          - $ref: reusableParam.yaml
         responses:
           200:
             description: OK
@@ -19,7 +19,7 @@ paths:
         parameters:
           - name: reusableParam
             allOf:
-              - $ref: 'https://raw.githubusercontent.com/guizoxxv/open-api-example/main/reusableParam.yaml'
+              - $ref: reusableParam.yaml
               - required: true
               - schema:
                 type: number
@@ -39,4 +39,4 @@ paths:
 components:
   responses:
     GeneralResponses:
-      $ref: https://raw.githubusercontent.com/guizoxxv/open-api-example/main/generalResponses.yaml
+      $ref: generalResponses.yaml
