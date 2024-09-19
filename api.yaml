@@ -1,17 +1,21 @@
 openapi: 3.0.1
+
 info:
-  title: An include file to define common parameters
+  title: OpenAPI Specification Tests
   version: 1.0.0
+
 paths: 
-    /test:
+    /external-param:
       get:
+        description: Uses a parameter defined in another file.
         parameters:
           - $ref: 'https://raw.githubusercontent.com/guizoxxv/open-api-example/main/reusableParam.yaml'
         responses:
           200:
             description: OK
-    /test-2:
+    /external-param-combined:
       get:
+        description: Uses a parameter defined in another file and combines with local parameters.
         parameters:
           - name: reusableParam
             allOf:
@@ -22,4 +26,17 @@ paths:
                 default: 50
         responses:
           200:
-            description: OK            
+            description: OK           
+    /external-responses-combined:
+      get:
+        description: Uses multiple responses defined in another file and combines with local responses.
+        responses:
+          allOf:
+            - $ref: '#/components/responses/GeneralResponses'
+            - 200:
+                description: OK
+
+components:
+  responses:
+    GeneralResponses:
+      $ref: https://raw.githubusercontent.com/guizoxxv/open-api-example/main/generalResponses.yaml

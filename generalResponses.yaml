@@ -1,0 +1,67 @@
+401:
+  description: Unauthorized
+  content:
+    application/json:
+      schema:
+        type:
+        properties:
+          data:
+            type: array
+            example: []
+          message:
+            type: string
+            example: Unauthenticated.
+          status_code:
+            type: integer
+            example: 401
+          status:
+            type: string
+            example: failed
+404:
+  description: Not Found
+  content:
+    application/json:
+      schema:
+        type:
+        properties:
+          data:
+            type: array
+            example: []
+          message:
+            type: string
+            example: The requested endpoint does not exist
+          status_code:
+            type: integer
+            example: 404
+          status:
+            type: string
+            example: failed
+403:
+  description: Forbidden
+  content:
+    application/json:
+      schema:
+        type:
+        properties:
+          data:
+            type: array
+            example: []
+          message:
+            type: string
+            example: This action is unauthorized
+          status_code:
+            type: integer
+            example: 401
+          status:
+            type: string
+            example: failed
+500:
+  description: Internal Server Error
+  content:
+    application/json:
+      schema:
+        type:
+        properties:
+          message:
+            type: string
+            example: Server Error
